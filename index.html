@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp Chúc Mừng 20/10</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      width: 400px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .card h1 {
+      color: #e91e63;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .flower {
+      font-size: 30px;
+      margin: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 25px;
+      height: 25px;
+      background: url('https://i.imgur.com/5xHCpje.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      opacity: 0.8;
+      animation-name: fall;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const createPetal = () => {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+
+    const size = Math.random() * 20 + 10; // Kích thước ngẫu nhiên từ 10px - 30px
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+
+    petal.style.left = Math.random() * window.innerWidth + 'px';
+    petal.style.animationDuration = (Math.random() * 3 + 3) + 's'; // 3-6s
+    petal.style.animationTimingFunction = 'linear';
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+      petal.remove();
+    }, 7000);
+  };
+
+  setInterval(createPetal, 300); // tạo cánh hoa mỗi 300ms
+</script>
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="flower">🌸🌷💐🌺🌹</div>
+    <h1>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10!</h1>
+    <p>
+      Nhân ngày đặc biệt này, xin chúc bé vyy ngày càng xinh đẹp<br>
+      và tràn đầy yêu thương. Hạnh phúc bên gia đình và bạn bè,đồng hành cùng a trên quãng đường tiếp theo😘!
+    </p>
+    <div class="flower">💖Yêu Em💞</div>
+  <div class="heart">❤️</div>
+    <div class="countdown">Chuyển hướng sau <span id="seconds">5</span> giây...</div>
+
+    <script>
+        let seconds = 10;
+        const countdown = document.getElementById('seconds');
+        const targetUrl = "https://taoanhdep.com/love/?b=eyJ0IjpbIkNow7pjIGLDqSB2eXkgMjAvMTAgdnYg4bqh8J+YmCIsIlnDqnUgZSBuaOG7qXTwn5iYIiwi4p2k77iP4p2k77iP4p2k77iP4p2k77iP4p2k77iP4p2k77iP4p2k77iP4p2k77iPIl0sImEiOiJjZ201MiJ9";
+
+        const timer = setInterval(() => {
+            seconds--;
+            countdown.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
